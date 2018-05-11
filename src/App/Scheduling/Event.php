@@ -83,9 +83,7 @@ class Event extends OriginalEvent
      */
     public function buildForegroundCommand()
     {
-        $output = ProcessUtils::escapeArgument($this->output);
-
-        return $this->ensureCorrectUser($this->command.$this->getAppendOutput().$output.' 2>&1');
+        return $this->ensureCorrectUser($this->command.$this->getAppendOutput().$this->output.' 2>&1');
     }
 
     /**
